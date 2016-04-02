@@ -1,0 +1,10 @@
+﻿[
+  {
+    "name" : "animaux",
+    "words": [ "chien", "chat", "poisson", "kangourou" ]
+  },
+  {
+    "name" : "villes",
+    "words": [ "londres", "paris", "new york", "santiago del chili" ]
+  }
+]

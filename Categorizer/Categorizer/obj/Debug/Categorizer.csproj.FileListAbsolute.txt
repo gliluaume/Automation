@@ -1,0 +1,8 @@
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\bin\Debug\Categorizer.exe.config
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\bin\Debug\Categorizer.exe
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\bin\Debug\Categorizer.pdb
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\bin\Debug\Newtonsoft.Json.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\bin\Debug\Newtonsoft.Json.xml
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\obj\Debug\Categorizer.csprojResolveAssemblyReference.cache
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\obj\Debug\Categorizer.exe
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\Categorizer\obj\Debug\Categorizer.pdb

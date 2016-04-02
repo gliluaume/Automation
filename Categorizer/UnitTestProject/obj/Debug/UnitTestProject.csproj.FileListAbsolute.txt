@@ -1,0 +1,12 @@
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\UnitTestProject.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\UnitTestProject.pdb
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\Categorizer.exe
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\Newtonsoft.Json.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\Categorizer.pdb
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\Newtonsoft.Json.xml
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\obj\Debug\UnitTestProject.dll
+c:\users\guillaume\documents\visual studio 2015\Projects\Categorizer\UnitTestProject\obj\Debug\UnitTestProject.pdb
+c:\Users\Guillaume\Documents\Visual Studio 2015\Projects\Categorizer\UnitTestProject\bin\Debug\UnitTestProject.dll.config
