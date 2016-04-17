@@ -1,13 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Categorizer.Data.JsonProviders
-{ 
+{
     public class JsonProvider<T> : IDataProvider<T>
     {
         public string Filepath { get; set; }
