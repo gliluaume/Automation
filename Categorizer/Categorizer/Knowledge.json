@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "site",
+    "Words": [ "yahoo" ]
+  },
+  {
+    "Name": "villes",
+    "Words": [ "londres", "paris", "new york", "santiago del chili" ]
+  },
+  {
+    "Name": "Entête",
+    "Words": [ "Heure;Durée (s);Application;Titre" ]
+  },
+  {
+    "Name": "Automation",
+    "Words": [ "Automation" ]
+  },
+  {
+    "Name": "Brouillon",
+    "Words": [ "new " ]
+  },
+  {
+    "Name": "Système",
+    "Words": [ "update" ]
+  },
+  {
+    "Name": "WebSurf",
+    "Words": [ "Edge" ]
+  }
+
+]
