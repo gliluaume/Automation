@@ -1,10 +1,9 @@
 ﻿using Categorizer.Data;
 using Categorizer.Engine;
 using System;
-using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Categorizer
 {
@@ -12,28 +11,52 @@ namespace Categorizer
     {
         static void Main(string[] args)
         {
+            int evalFLoor = 1;
 
-            string s = @"https://fr-mg42.mail.yahoo.com/neo/launch?.rand=c42sul7bnqomg#3609056201";
-            //var toto = s.Split(',', ';', '.', ':', '!', '?', '=', '+', '-', '[',']', '(', ')', '*', '|', '\\', '/', '#');
+            //DataFile
+            string dataPath = ConfigurationManager.AppSettings["DataFile"];
+            string[] lines = File.ReadAllLines(dataPath);
 
             CategoryBuilder categoryBuilder = new CategoryBuilder();
             categoryBuilder.ReadKnowledge();
-            CategoryEvaluations categoryEvaluations = categoryBuilder.Run(s);
-            if(categoryEvaluations.NumCategories == 0)
+
+            for (int i = 0; i < lines.Length; i++)
             {
-                Console.WriteLine("nouvelle catégorie :");
-                string newCat = Console.ReadLine();
-                categoryBuilder.AddCategory(newCat);
-
-                string word = GetWord();
-                while (word != @"$quit")
+                Console.WriteLine(lines[i]);
+                CategoryEvaluations categoryEvaluations = categoryBuilder.Run(lines[i]);
+                CategoryEvaluation firstMatchingEvals = categoryEvaluations.GetByTextIndex(0).Where(a => a.Evaluation > evalFLoor).FirstOrDefault();
+                string currCat;
+                if (null == firstMatchingEvals)
                 {
-                    if(string.IsNullOrWhiteSpace(word))
-                        categoryBuilder.AddWordInCategory(newCat, word);
-                    word = GetWord();
+                    Console.WriteLine("choix catégorie :");
+                    int selCat = AskCategoryMenu(categoryBuilder);
+                    
+                    if (selCat == categoryBuilder.Knowledge.Length)
+                    {
+                        Console.WriteLine("nom de la nouvelle catégorie :");
+                        currCat = Console.ReadLine();
+                        categoryBuilder.AddCategory(currCat);
+                    }
+                    else
+                    {
+                        currCat = categoryBuilder.Knowledge[selCat].Name;
+                    }
+                    string word = GetWord();
+                    while ((word != @"$quit") && (word != @"qq"))
+                    {
+                        if (!string.IsNullOrWhiteSpace(word))
+                            categoryBuilder.AddWordInCategory(currCat, word);
+                        word = GetWord();
+                    }
                 }
-
+                else
+                {
+                    currCat = firstMatchingEvals.CategoryName;
+                }
+                lines[i] += string.Format(";{0}", currCat);
             }
+            categoryBuilder.SaveKnowledge();
+            File.WriteAllLines(ConfigurationManager.AppSettings["OutFile"], lines);
             Console.WriteLine("appuyer sur entrée pour quitter");
             Console.ReadLine();
 
@@ -42,6 +65,25 @@ namespace Categorizer
         {
             Console.WriteLine("nouveau mot :");
             return Console.ReadLine();
+        }
+
+        static private int AskCategoryMenu(CategoryBuilder categoryBuilder)
+        {
+            int ret = -1;
+            while (ret < 0 || ret > categoryBuilder.Knowledge.Length)
+            {
+                for (int i = 0; i < categoryBuilder.Knowledge.Length; i++)
+                {
+                    Console.WriteLine(string.Format("{0}: {1}", i.ToString().PadLeft(2, '0'), categoryBuilder.Knowledge[i].Name));
+                }
+                Console.WriteLine(string.Format("{0}: Nouvelle", categoryBuilder.Knowledge.Length.ToString().PadLeft(2, '0')));
+                string response = Console.ReadLine();
+                if (!int.TryParse(response, out ret))
+                {
+                    ret = -1;
+                }
+            }
+            return ret;
         }
     }
 

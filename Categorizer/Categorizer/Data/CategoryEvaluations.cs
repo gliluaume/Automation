@@ -54,16 +54,5 @@ namespace Categorizer.Data
                 this.CategoryEvals[i, categoryIndex] = catTextEvals[i];
             }
         }
-        //public CategoryEvaluation[] GetByCategoryIndex(int categoryIndex)
-        //{
-        //    CategoryEvaluation[] ret = new CategoryEvaluation[_numTexts];
-
-        //    for (int i = 0; i < this.NumTexts; i++)
-        //    {
-        //        ret[i] = this.CategoryEvals[i, categoryIndex];
-        //    }
-
-        //    return ret;
-        //}
     }
 }
